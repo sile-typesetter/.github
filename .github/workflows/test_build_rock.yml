@@ -13,8 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        luaVersion: [ "5.4", "5.3", "5.2", "5.1", "luajit", "luajit-openresty" ]
-        luarocksVersion: [ "3.8.0" ]
+        luaVersion: [ "5.4", "5.3", "5.2", "5.1" ]
         rockspec: ${{ fromJSON(inputs.rockspecs) }}
     runs-on: ubuntu-22.04
     steps:
@@ -28,8 +27,6 @@ jobs:
           luaVersion: ${{ matrix.luaVersion }}
       - name: Setup ‘luarocks’
         uses: leafo/gh-actions-luarocks@v4
-        with:
-          luarocksVersion: ${{ matrix.luarocksVersion }}
       - name: Confirm dev rockspec(s) build
         if: ${{ !startsWith(matrix.rockspec, 'rockspecs/') }}
         run: |
