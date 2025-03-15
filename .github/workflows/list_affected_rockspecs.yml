@@ -29,7 +29,7 @@ jobs:
         # stop gap. Eventually we should move to an uncompromised action source.
         # c.f. https://github.com/tj-actions/changed-files/issues/2463
         # c.f. https://www.stepsecurity.io/blog/harden-runner-detection-tj-actions-changed-files-action-is-compromised
-        uses: tj-actions/changed-files@22dc9741b8cac65f3c015119a9f2369fd607ae7d
+        uses: catloversg/tj-actions-changed-files@22dc9741b8cac65f3c015119a9f2369fd607ae7d
         with:
           files: |
             *.rockspec
